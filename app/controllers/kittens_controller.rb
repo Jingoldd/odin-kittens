@@ -25,7 +25,7 @@ class KittensController < ApplicationController
   end 
 
   def update
-    if @kitten.update
+    if @kitten.update(kitten_params)
       redirect_to @kitten, notice: 'Kitten successfully updated!'
     else 
       render :edit
@@ -44,6 +44,6 @@ class KittensController < ApplicationController
   end 
 
   def kitten_params
-    params.requite(:kitten).permit(:name, :age, :cuteness, :softness)
+    params.require(:kitten).permit(:name, :age, :cuteness, :softness)
   end
 end
