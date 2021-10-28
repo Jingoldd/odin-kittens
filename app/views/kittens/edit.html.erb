@@ -1,3 +1,6 @@
 <h1>Edit Kitten</h1>
 
 <%= render 'kittens/form' %>
+
+Do you want to delete <%= @kitten.name %>?<br>
+<%= link_to 'delete kitten', @kitten, method: :delete, data: { confirm: "Are you sure?"} %>

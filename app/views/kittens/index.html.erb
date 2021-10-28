@@ -5,6 +5,7 @@
     <strong><%= kitten.name %></strong><br>
     <%= kitten.age %> years old<br>
     <%= kitten.cuteness %>/10 of cuteness<br>
-    <%= kitten.softness%>/10 of softness<br>
-  </div><br>
+    <%= kitten.softness%>/10 of softness<br><br>
+    <%= link_to 'delete kitten', kitten, method: :delete, data: { confirm: "Are you sure?"} %>
+  </div><br><br>
 <% end %> 
