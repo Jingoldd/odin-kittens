@@ -34,7 +34,7 @@ class KittensController < ApplicationController
 
   def destroy
     @kitten.destroy
-    redirect_to root_path, notice: 'Kitten deleted'
+    redirect_to root_path, notice: 'Kitten successfully deleted'
   end 
 
   private 

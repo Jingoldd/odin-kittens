@@ -1,8 +1,18 @@
+<% if @kitten.errors.any? %>
+  <div>
+    <h2>We can't save your kitten if you don't fill in those fields, my friend:</h2>
+
+      <% @kitten.errors.each do |error| %>
+        <%= error.full_message %><br><br>
+      <% end %>
+  </div><br><br>
+<% end %>
+
 <%= form_with model: @kitten, local: true do |form| %>
   <%= form.label :name, 'Kittens Name' %><br>
   <%= form.text_field :name %><br><br>
   <%= form.label :age, 'How old is your kitten?'%><br>
-  <%= form.number_field :age %><br><br>
+  <%= form.number_field :age, in: 0..100 %><br><br>
   <%= form.label :cuteness %><br>
   0 <%= form.range_field :cuteness, in: 0..10 %> 10<br><br> 
   <%= form.label :softness %><br>
